@@ -1,0 +1,69 @@
+------ SQL for Beginners #1 ------
+Title : Adults only 
+https://www.codewars.com/kata/590a95eede09f87472000213
+SQL :   SELECT name,age FROM users 
+        WHERE age >= 18;
+
+
+
+------ SQL for Beginners #2 ------
+Title : on the Canadian Border
+https://www.codewars.com/kata/590ba881fe13cfdcc20001b4
+SQL :   SELECT * FROM travelers 
+        WHERE NOT country = 'Mexico' AND NOT country ='Canada' AND NOT country = 'USA';
+
+
+
+------ SQL for Beginners #3 ------
+Title : Register for the Party
+https://www.codewars.com/kata/590cc86f7557c0494000007e
+SQL :   INSERT INTO participants (name,age,attending)
+        VALUES ('Nutthabhas','25','true');
+        SELECT * FROM participants;
+
+
+
+------ SQL for Beginners #4 ------
+Title : Collect Tuition
+https://www.codewars.com/kata/5910b0d378cc2ba91400000b
+SQL :   SELECT * from students
+        WHERE tuition_received = false;
+
+
+
+------ SQL for Beginners #5 ------
+Title : Best-Selling Books
+https://www.codewars.com/kata/591127cbe8b9fb05bd00004b
+SQL :   SELECT * FROM books
+        ORDER BY copies_sold DESC
+        LIMIT 5;
+
+
+
+------ SQL for Beginners #6 ------
+Title : Countries Capitals for Trivia Night
+https://www.codewars.com/kata/5e5f09dc0a17be0023920f6f
+SQL :   SELECT capital 
+        FROM countries 
+        WHERE country LIKE 'E%' AND continent IN ('Africa', 'Afrika')
+        ORDER BY capital ASC
+        LIMIT 3;
+
+
+
+------ SQL Basics ------
+Title : Simple table totaling 
+https://www.codewars.com/kata/5809575e166583acfa000083
+SQL :   SELECT 
+        CASE 
+        WHEN clan = '' then '[no clan specified]' 
+        ELSE clan END ,
+        ROW_NUMBER() OVER(ORDER BY SUM(points) DESC) rank , 
+        COUNT(id) AS total_people ,
+        SUM(points) AS total_points
+        FROM people
+        GROUP BY clan
+        ORDER BY total_points DESC;
+
+
+        
